@@ -38,6 +38,8 @@ main:
 	EOR r1, r2	// r1 = r1 EOR r2
 	EOR r2, r1	// r2 = r2 EOR (r1 EOR r2) = r2 EOR r2 EOR r1 = r1
 	EOR r1, r2 	// r1 EOR r2 EOR r1 = r2	
+	
+	MOV r3, #152, 26
 
 #output
 	LDR r0, =output
@@ -54,5 +56,5 @@ main:
 	askInt2: .asciz "Please give me another one. \n"
 	integer2: .word 0
 	formatString: .asciz " %d"
-	output: .asciz "Integer 1 is now %d and integer 2 is now %d. They are swapped. \n (they are not swapped in memory but just swapped in registers) \n"
+	output: .asciz "Integer 1 is now %d and integer 2 is now %d. They are swapped. \n %d (they are not swapped in memory but just swapped in registers) \n"
 #End main
