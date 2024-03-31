@@ -12,11 +12,11 @@ main:
 	SUB sp, sp, #4
 	STR lr, [sp]
 
+input:
 # Prompt user for a function to use
 	LDR r0, =askFunction
 	BL printf
 
-input:
 # Input number
 	LDR r0, =formatDecimal
 	LDR r1, =action
@@ -42,11 +42,11 @@ input:
 		BEQ notLetter
 			LDR r0, =outputIsLetter
 			BL printf
-			B endProgram	
+			B input	
 		notLetter:
 		LDR r0, =outputIsNotLetter
 		BL printf
-		B endProgram
+		B input
 
 # Case 2 run function checkAlphaCharWithoutLogical
 case2:
@@ -66,11 +66,11 @@ case2:
 		BEQ notLetter2
 			LDR r0, =outputIsLetter
 			BL printf
-			B endProgram
+			B input
 		notLetter2:
 		LDR r0, =outputIsNotLetter
 		BL printf
-		B endProgram
+		B input
 
 # Case 3 run function gradeCheck
 case3:
@@ -97,7 +97,7 @@ case3:
 		LDR r0, =grade
 		LDR r0, [r0]
 		BL gradeCheck
-		B endProgram
+		B input
 
 # Case 4 run function findMaxOf3
 case4:
@@ -128,14 +128,14 @@ case4:
 		LDR r1, =int2
 		LDR r1, [r1]
 		LDR r2, =int3
-		LDR r3, [r3]
+		LDR r2, [r2]
 		BL findMaxOf3
 	
 	# Output
 		MOV r1, r0
 		LDR r0, =outputMax
 		BL printf
-		B endProgram
+		B input 
 
 # Case 0 exit the program, else return to input
 case0:
@@ -152,7 +152,7 @@ endProgram:
 	MOV pc, lr
 
 .data
-	askFunction: .asciz "Hello user 10001, please give a me a number to test for functions.\nEnter [1] to test checkAlphaChar. \nEnter [2] to test checkAlphaCharWithoutLogical. \nEnter [3] to test gradeCheck. \nEnter [4] to test findMaxOf3. \nEnter [0] to exit. \n"
+	askFunction: .asciz "\nHello user 10001, please give a me a number to test for functions.\nEnter [1] to test checkAlphaChar. \nEnter [2] to test checkAlphaCharWithoutLogical. \nEnter [3] to test gradeCheck. \nEnter [4] to test findMaxOf3. \nEnter [0] to exit. \n"
 	askChar: .asciz "Please enter a character and I will tell you whether or not it's a letter. \n"
 	askName: .asciz "Please enter your name. \n"
 	askGrade: .asciz "Please enter your grade that is an integer. \n"
@@ -165,7 +165,7 @@ endProgram:
 	formatChar: .asciz "%s"
 	formatString: .asciz "%s"	
 
-	outputIsLetter: .asciz "You entered a alphabetic character. \n"
+	outputIsLetter: .asciz "You entered an alphabetic character. \n"
 	outputIsNotLetter: .asciz "You entered a non-alphabetic character. \n"
 	outputName: .asciz "Hi %s, "
 	outputMax: .asciz "The max of the three is %d \n"

@@ -182,9 +182,13 @@ outputGrade:
 
 .data
 	outputE: .ascii "Your grade is outside of normal range 0 <= g <= 100. \n"
+	breakString1: .word 0
 	outputF: .ascii "Your grade is F. \n"
+	breakString2: .word 0
 	outputC: .ascii "Your grade is C. \n"
+	breakString3: .word 0
 	outputB: .ascii "Your grade is B. \n"
+	breakString4: .word 0
 	outputA: .ascii "Your grade is A. \n"
 
 # End gradeCheck
