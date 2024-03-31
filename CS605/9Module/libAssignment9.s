@@ -6,7 +6,7 @@
 # 1.1: checkAlphaChar			go to line 11
 # 1.2: checkAlphaCharWithoutLogical	go to line 58
 # 2: gradeCheck				go to line 110
-# 3: findMaxOf3				go to line 189
+# 3: findMaxOf3				go to line 193
 
 .global checkAlphaChar
 
@@ -181,15 +181,11 @@ outputGrade:
 	MOV pc, lr
 
 .data
-	outputE: .ascii "Your grade is outside of normal range 0 <= g <= 100. \n"
-	breakString1: .word 0
-	outputF: .ascii "Your grade is F. \n"
-	breakString2: .word 0
-	outputC: .ascii "Your grade is C. \n"
-	breakString3: .word 0
-	outputB: .ascii "Your grade is B. \n"
-	breakString4: .word 0
-	outputA: .ascii "Your grade is A. \n"
+	outputE: .asciz "Your grade is outside of normal range 0 <= g <= 100. \n"
+	outputF: .asciz "Your grade is F. \n"
+	outputC: .asciz "Your grade is C. \n"
+	outputB: .asciz "Your grade is B. \n"
+	outputA: .asciz "Your grade is A. \n"
 
 # End gradeCheck
 
