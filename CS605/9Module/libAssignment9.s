@@ -6,7 +6,7 @@
 # 1.1: checkAlphaChar			go to line 11
 # 1.2: checkAlphaCharWithoutLogical	go to line 58
 # 2: gradeCheck				go to line 110
-# 3: findMaxOf3				go to line 189
+# 3: findMaxOf3				go to line 199
 
 .global checkAlphaChar
 
@@ -180,6 +180,8 @@ outputGrade:
 	ADD sp, #4
 	MOV pc, lr
 
+# I have to insert the breaks to break the strings, otherwise outputE would include every string below for some reason
+# Probably related how strings from .data are stored when run from a library
 .data
 	outputE: .ascii "Your grade is outside of normal range 0 <= g <= 100. \n"
 	breakString1: .word 0
