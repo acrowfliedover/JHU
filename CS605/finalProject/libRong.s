@@ -328,7 +328,7 @@ gcd:
 
 # store r4 to be used
 	SUB sp, #4
-	STR r4, sp
+	STR r4, [sp]
 
 continuegcd:
 # if r0 < r1 swap them
@@ -337,7 +337,6 @@ continuegcd:
 		MOV r2, r1
 		MOV r1, r0
 		MOV r0, r2
-		B continuegcd
 
 # otherwise find r0 = r0 mod r1
 goMod:
@@ -349,10 +348,10 @@ goMod:
 	CMP r0, #0
 	BNE continuegcd
 
+returngcd:
 # if it's zero move r1 to r0 and return
 	MOV r0, r1
 	
-returngcd:
 # pop stack
 	LDR r4, [sp]
 	LDR lr, [sp, #4]
@@ -399,7 +398,7 @@ generateRandom:
 # store e to r6 for output
 	ADD r0, #1
 	MOV r6, r0
-	MOV r1, r5
+	MOV r1, r4
 	BL gcd
 
 # if gcd is 1, return e
@@ -439,11 +438,11 @@ cprivexp:
 
 # store lr on stack
 	SUB sp, #4
-	STR lr, sp
+	STR lr, [sp]
 
 # store other variables and initialize them
 	SUB sp, #12
-	STR r4, sp
+	STR r4, [sp]
 	STR r5, [sp, #4]
 	STR r6, [sp, #8]
 	MOV r4, r0
@@ -451,15 +450,14 @@ cprivexp:
 	MOV r6, #2
 
 continueCprivexp:
-# find e * r5 mod phi
+# find e * r6 mod phi
 	MUL r0, r4, r6
 	MOV r1, r5
 	BL modulo
 
 # if it equals 1, return
 	CMP r0, #1
-	BNE incrementD
-		B returnCprivexp
+	BEQ returnCprivexp
 
 # else increment and continue the loop
 	ADD r6, #1
@@ -469,7 +467,7 @@ returnCprivexp:
 	MOV r0, r6
 
 # move back the stored variables and return
-	LDR r4, sp
+	LDR r4, [sp]
 	LDR r5, [sp, #4]
 	LDR r6, [sp, #8]
 	LDR lr, [sp, #12]
