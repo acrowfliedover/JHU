@@ -245,8 +245,8 @@ moduloPower:
 	MOV r6, r2
 
 checkEndPower:
-# end condition: if n = 0 return r0 which stores either the initial base or the last remainder 
-	CMP r5, #0
+# end condition: if n = 1 return r0 which stores either the initial base or the last remainder 
+	CMP r5, #1
 	BGT continuePower
 		B returnModuloPower
 

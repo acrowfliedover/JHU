@@ -106,7 +106,7 @@ input:
 # Case 2 generate keys by entering primes
 case2:
 	CMP r1, #2
-	BNE case0
+	BNE case3
 
 	askPrime1:
 	# ask for the first prime
@@ -210,6 +210,13 @@ case2:
 	# return to main menu
 		B input
 
+# calling testModuloPower
+case3:
+	CMP r1, #3
+	BNE case0
+		BL testModuloPower
+		B input
+
 # Case -1 exit the program, else return to input
 case0:
 	CMP r1, #-1
@@ -225,7 +232,7 @@ endProgram:
 	MOV pc, lr
 
 .data
-	askFunction: .asciz "\nHello user 10001, please give me a number to test for functions.\nEnter [1] to generate keys using random primes. \nEnter [2] to generate keys using inputted primes. \nEnter [-1] to exit. \n"
+	askFunction: .asciz "\nHello user 10001, please give me a number to test for functions.\nEnter [1] to generate keys using random primes. \nEnter [2] to generate keys using inputted primes. \nEnter [3] to testModuloPower \nEnter [-1] to exit. \n"
 	promptPrime1: .asciz "Please enter a prime \n"
 	promptPrime2: .asciz "Please enter a different prime \n"
 	askNotPrime: .asciz "You entered a non-prime. Please enter a prime. \n"
