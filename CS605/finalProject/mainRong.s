@@ -210,12 +210,81 @@ case2:
 	# return to main menu
 		B input
 
-# calling testModuloPower
+
+# Case 3 call encrypt
 case3:
 	CMP r1, #3
-	BNE case0
-		BL testModuloPower
-		B input
+	BNE case4
+
+	# ask for public keys
+	LDR r0, =askPublicKeyn
+	BL printf
+	LDR r0, =formatDecimal
+	LDR r1, =number1 @number1 is now public key n
+	BL scanf
+	LDR r0, =askPublicKeye
+	BL printf
+	LDR r0, =formatDecimal
+	LDR r1, =number2 @number2 is now public key e
+	BL scanf
+
+	# ask for message to encrypt
+	LDR r0, =askMessage
+	BL printf
+	LDR r0, =formatString
+	LDR r1, =message
+	BL scanf
+	
+	# ask for output file name
+	LDR r0, =askInputFile
+	BL printf
+	LDR r0, =formatString
+	LDR r1, =fileName
+	BL scanf
+	
+	# insert your call to encrypt here, load variables to your corresponding registers	
+	# BL encrypt
+
+	LDR r0, =outputEncrypt
+	BL printf 
+
+	# return to main menu
+	B input
+
+# case 4 call decrypt
+case4:
+	CMP r1, #4
+	BNE case0	
+
+	# ask for private keys
+	LDR r0, =askPrivateKeyn
+	BL printf
+	LDR r0, =formatDecimal
+	LDR r1, =number1 @number1 is n
+	BL scanf
+	LDR r0, =askPrivateKeyd
+	BL printf
+	LDR r0, =formatDecimal
+	LDR r1, =number2 @number2 is d
+	BL scanf
+
+	# ask for name of file to decrypt
+	LDR r0, =askInputFile
+	BL printf
+	LDR r0, =formatString
+	LDR r1, =fileName
+	BL scanf
+	
+	# insert your call to decrypt here. load variables to your corresponding registers
+	# BL decrypt
+
+	# if you want to output the message here, uncomment the following
+	# make sure you move your output to r1
+	# LDR r0, =outputDecrypt
+	# BL printf
+
+	# return to main menu
+	B input
 
 # Case -1 exit the program, else return to input
 case0:
@@ -232,21 +301,36 @@ endProgram:
 	MOV pc, lr
 
 .data
-	askFunction: .asciz "\nHello user 10001, please give me a number to test for functions.\nEnter [1] to generate keys using random primes. \nEnter [2] to generate keys using inputted primes. \nEnter [3] to testModuloPower \nEnter [-1] to exit. \n"
+	askFunction: .asciz "\nHello user 10001, please give me a number to test for functions.\nEnter [1] to generate keys using random primes.\nEnter [2] to generate keys using inputted primes.\nEnter [3] to encrypt a message and output to a file.\nEnter [4] to decrypt a message from a file. \nEnter [-1] to exit. \n"
 	promptPrime1: .asciz "Please enter a prime \n"
 	promptPrime2: .asciz "Please enter a different prime \n"
 	askNotPrime: .asciz "You entered a non-prime. Please enter a prime. \n"
 	askOutOfRange: .asciz "You entered a number out of range.  Please enter a number between 10 and 50. \n"
 	askNewCommand: .asciz "You entered an invalid command \n"
+	
+	askPublicKeyn: .asciz "Please enter the public keys you got. Enter n first, that is the product of the two primes.\n"
+	askPublicKeye: .asciz "Please enter the other part of the public key, the exponent e.\n"
+	askMessage: .asciz "Please enter the message you want to encrypt. \n"
+	askOutputFileName: .asciz "Please enter the file name for your output. \n"
+
+	askPrivateKeyn: .asciz "Please enter your private keys. Enter n first, that is the product of the two primes. \n"
+	askPrivateKeyd: .asciz "Please enter the other part of the private key, the exponent d.\n"
+	askInputFile: .asciz "Please enter the name of the file you want to decrypt. \n"
+	
 
 	formatDecimal: .asciz "%d"
+	formatString: .asciz "%s"
 
 	outputPublicKey: .asciz "Your public keys are: n = %d and e = %d.\n"
 	outputPrivateKey: .asciz "Your private keys are: n = %d and d = %d.\n"
-	outputFib: .asciz "The %dth Fibonacchi number is %d"
+	outputEncrypt: .asciz "Encryption succeed.\n"
+	outputDecrypt: .asciz "The encrypted message was: %s\n" @this could also be in decrypt function depending on how you implement it
+
 	
 	action: .word 0
 	number1: .word 0
 	number2: .word 0
+	message: .asciz ""
+	fileName: .asciz ""
 
 # End main
