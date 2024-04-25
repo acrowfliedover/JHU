@@ -1,0 +1,21 @@
+All: DecryptionMainTest mainEncryptNDecrypt maintest  fileWriting
+LIB=libConversions.o
+CC=gcc
+
+DecryptionMainTest: DecryptionMainTest.o $(LIB)
+	$(CC) $@.o $(LIB) -g -o $@
+
+mainEncryptNDecrypt: mainEncryptNDecrypt.o $(LIB)
+	$(CC) $@.o $(LIB) -g -o $@
+
+maintest: maintest.o $(LIB)
+	$(CC) $@.o $(LIB) -g -o $@
+
+#encrypt-2: encrypt-2.o $(LIB)
+#	$(CC) $@.o $(LIB) -g -o $@
+
+fileWriting: fileWriting.o $(LIB)
+	$(CC) $@.o $(LIB) -g -o $@
+
+.s.o:
+	$(CC) $(@:.o=.s) -g -c -o $@

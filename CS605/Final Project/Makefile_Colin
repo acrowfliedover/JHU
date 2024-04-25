@@ -1,0 +1,12 @@
+All: encrypt
+LIB=encrypt.o
+CC=gcc
+
+DecryptionMainTest: encryptTest.o $(LIB)
+	$(CC) $@.o $(LIB) -g -o $@
+
+encrypt: encrypt.o $(LIB)
+	$(CC) $@.o $(LIB) -g -o $@
+
+.s.o:
+	$(CC) $(@:.o=.s) -g -c -o $@
