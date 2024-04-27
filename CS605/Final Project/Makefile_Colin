@@ -1,11 +1,27 @@
-All: encrypt
-LIB=encrypt.o
+All: main arrayIntoFile stringToArray print_string copy_string_to_array arrayIntoFile moduloPower
+
+LIB=libConversion.o
 CC=gcc
 
-DecryptionMainTest: encryptTest.o $(LIB)
+arrayIntoFile: arrayIntoFile.o $(LIB)
 	$(CC) $@.o $(LIB) -g -o $@
 
-encrypt: encrypt.o $(LIB)
+encryptArray: encryptArray.o $(LIB)
+	$(CC) $@.o $(LIB) -g -o $@
+
+stringToArray: stringToArray.o $(LIB)
+	$(CC) $@.o $(LIB) -g -o $@
+
+print_string: print_string.o $(LIB)
+	$(CC) $@.o $(LIB) -g -o $@
+
+arrayIntoFile: arrayIntoFile.o $(LIB)
+	$(CC) $@.o $(LIB) -g -o $@
+
+moduloPower: moduloPower.o $(LIB)
+	$(CC) $@.o $(LIB) -g -o $@
+
+main: main.o $(LIB)   # Add $(LIB) as a dependency
 	$(CC) $@.o $(LIB) -g -o $@
 
 .s.o:
