@@ -91,8 +91,6 @@ StartLoop:
     
     POP {pc}
     
-
-
 .data
     middleOutput: .asciz "The plain text is: \n"
     fin: .asciz "encrypted.txt"
@@ -172,7 +170,7 @@ EndPrintLoop:
 
 
 .data 
-   outputFormat: .asciz "%c,"
+   outputFormat: .asciz "%c"
    newLine: .asciz "\n"
 
 #Author: Yan Chen

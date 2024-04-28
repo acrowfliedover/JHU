@@ -235,12 +235,6 @@ case3:
 	LDR r0, =formatDecimal
 	LDR r1, =number2 @number2 is now public key e
 	BL scanf
-        #LDR r0, =askMessage
-        #BL printf
-        #LDR r0, =formatString
-        #LDR r1, =message
-        #BL scanf 
-
 
 	# clear the buffer
 	BL getchar
@@ -250,8 +244,6 @@ case3:
 	LDR r0, [r0]
 	LDR r1, =number1
 	LDR r1, [r1]
-        #LDR r2, =message
-        #LDR r2, [r2]
 	BL encrypt
 
 	LDR r0, =outputEncrypt
