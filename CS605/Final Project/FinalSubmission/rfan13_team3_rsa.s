@@ -1,5 +1,5 @@
 #
-# File name: rfan13_team3_rsa.s # change this to <Your JHEDID>_team#_RSALib.s.
+# File name: rfan13_team3_rsa.s # change this to <Your JHEDID>_team#_rsa.s.
 # Author: Rong Fan
 # Date: 04/20/2024
 # Purpose: This is the main program for the final project
@@ -10,13 +10,13 @@
 # 2.generate keys by entering primes								go to line xxx
 # Will check if entered is between 10 and 50 can be changed to used larger numbers
 
-# 3.encrypt
+# 3.encrypt															go to line xxx
 # enter n, e, and the message you want to encrypt and output into a file encrypted.txt
 
-# 4.decrypt
+# 4.decrypt															go to line xxx
 # enter n, d, assuming your encrypted file is called encrypted.txt, 
 
-
+# for case 1 and 2
 # r4 = p
 # r5 = q
 # r6 = n
@@ -235,12 +235,23 @@ case3:
 	LDR r0, =formatDecimal
 	LDR r1, =number2 @number2 is now public key e
 	BL scanf
+        #LDR r0, =askMessage
+        #BL printf
+        #LDR r0, =formatString
+        #LDR r1, =message
+        #BL scanf 
+
+
+	# clear the buffer
+	BL getchar
 
 	# call encrypt
 	LDR r0, =number2
 	LDR r0, [r0]
 	LDR r1, =number1
 	LDR r1, [r1]
+        #LDR r2, =message
+        #LDR r2, [r2]
 	BL encrypt
 
 	LDR r0, =outputEncrypt
@@ -255,36 +266,31 @@ case4:
 	BNE case0	
 
 	# ask for private keys
-	 LDR r0, =askPrivateKeyn
-	 BL printf
-	 LDR r0, =formatDecimal
-	 LDR r1, =number1 @number1 is n
-	 BL scanf
-	 LDR r0, =askPrivateKeyd
-	 BL printf
-	 LDR r0, =formatDecimal
-	 LDR r1, =number2 @number2 is d
-	 BL scanf
+	LDR r0, =askPrivateKeyn
+	BL printf
+	LDR r0, =formatDecimal
+	LDR r1, =number1 @number1 is n
+	BL scanf
+	LDR r0, =askPrivateKeyd
+	BL printf
+	LDR r0, =formatDecimal
+	LDR r1, =number2 @number2 is d
+	BL scanf
 
-	@ # ask for name of file to decrypt
-	@ LDR r0, =askInputFile
-	@ BL printf
-	@ LDR r0, =formatString
-	@ LDR r1, =fileName
-	@ BL scanf
+	# clear the buffer
+	BL getchar
 	
-
 	LDR r0, =number2
 	LDR r0, [r0]
 	LDR r1, =number1
 	LDR r1, [r1]
-	# insert your call to decrypt here. load variables to your corresponding registers
 	BL decrypt
+
 
 	# if you want to output the message here, uncomment the following
 	# make sure you move your output to r1
-	# LDR r0, =outputDecrypt
-	# BL printf
+	#LDR r0, =outputDecrypt
+	#BL printf
 
 	# return to main menu
 	B input
@@ -313,27 +319,24 @@ endProgram:
 	
 	askPublicKeyn: .asciz "Please enter the public keys you got. Enter n first, that is the product of the two primes.\n"
 	askPublicKeye: .asciz "Please enter the other part of the public key, the exponent e.\n"
-	askMessage: .asciz "Please enter the message you want to encrypt. \n"
-	askOutputFileName: .asciz "Please enter the file name for your output. \n"
 
 	askPrivateKeyn: .asciz "Please enter your private keys. Enter n first, that is the product of the two primes. \n"
 	askPrivateKeyd: .asciz "Please enter the other part of the private key, the exponent d.\n"
-	askInputFile: .asciz "Please enter the name of the file you want to decrypt. \n"
 	
-
 	formatDecimal: .asciz "%d"
 	formatString: .asciz "%s"
+        #msgFormat: .space 100
+        
 
 	outputPublicKey: .asciz "Your public keys are: n = %d and e = %d.\n"
 	outputPrivateKey: .asciz "Your private keys are: n = %d and d = %d.\n"
 	outputEncrypt: .asciz "Encryption succeed.\n"
-	outputDecrypt: .asciz "The encrypted message was: %s\n" @this could also be in decrypt function depending on how you implement it
 
-	
 	action: .word 0
 	number1: .word 0
 	number2: .word 0
-	message: .asciz ""
+	message: .space 100
 	fileName: .asciz ""
+
 
 # End main

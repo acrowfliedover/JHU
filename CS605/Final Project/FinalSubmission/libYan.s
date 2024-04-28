@@ -2,6 +2,8 @@
 #Author: Yan Chen
 .global decrypt
 decrypt:
+    PUSH {lr}
+ 
     MOV r7, r0   @r0 - private key: d
     MOV r10, r1  @r1 - modulus: n
 
@@ -50,8 +52,7 @@ StartLoop:
 
          #Store the interger into r1
          MOV r1, r0
-         #LDR r0, =middleOutput
-         #BL printf
+
 
          
          #Store r1 in list r11 and locate at r4
@@ -72,16 +73,28 @@ StartLoop:
          #r5 - counter
          #r7 - size of the array
          #r8 - elements get form the array
+         LDR r0, =middleOutput
+         BL printf
+
          MOV r5, #0  
          MOV r7, r6  
          MOV r8, #0  
          BL printArray   
          B  End     
     End:
-    
+
     BL arrayIntoFile
+   
+    LDR r1, =fin
+    LDR r0, [r1]
+    BL fclose
+    
+    POP {pc}
+    
+
 
 .data
+    middleOutput: .asciz "The plain text is: \n"
     fin: .asciz "encrypted.txt"
     array: .space 150
     r: .asciz "r"
