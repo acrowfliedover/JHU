@@ -1,9 +1,9 @@
-All: main modulo encryptArray arrayIntoFile moduloPower encrypt
+All: main modulo encryptArray arrayWriteFile moduloPower encrypt
 
 LIB=libConversion.o
 CC=gcc
 
-arrayIntoFile: arrayIntoFile.o $(LIB)
+arrayWriteFile: arrayWriteFile.o $(LIB)
 	$(CC) $@.o $(LIB) -g -o $@
 
 encryptArray: encryptArray.o $(LIB)

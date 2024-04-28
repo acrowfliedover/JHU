@@ -1,7 +1,4 @@
 .data
-array:  .space 100   @ Initialize an array with values 1, 2, 3, 4, 5
-source_string: .ascii "This is a test\0"
-destination_array: .space 20 @ Allocate space for the destination array
 n: .word 143
 e: .word 7
 .text

@@ -6,16 +6,16 @@
 
 # 1.1: checkDivisible			go to line 20	Check if a number is a divisor of another
 # 1.2: getRoughSquareRoot		go to line 63	Get a number slightly more than the square root of a number
-# 1.3: checkPrime			go to line 113	Check if a number is prime
+# 1.3: checkPrime				go to line 113	Check if a number is prime
 
-# 2.1: modulo				go to line 178	Get x%y
-# 2.2: moduloPower			go to line 217	Get (x^y)%z
+# 2.1: modulo					go to line 178	Get x%y
+# 2.2: moduloPower				go to line 217	Get (x^y)%z
  
-# 3.1: getRandom 			go to line 275  Generate a random integer between 1 and n
-# 3.2: gcd				go to line 314	Find the greatest common devisor of x and y
+# 3.1: getRandom 				go to line 275  Generate a random integer between 1 and n
+# 3.2: gcd						go to line 314	Find the greatest common devisor of x and y
 					
-# 4.1: cpubexp				go to line 367	Generate public exponent e
-# 4.2: cprivexp				go to line 423	Generate private exponent d
+# 4.1: cpubexp					go to line 367	Generate public exponent e
+# 4.2: cprivexp					go to line 423	Generate private exponent d
 
 .global checkDivisible
 

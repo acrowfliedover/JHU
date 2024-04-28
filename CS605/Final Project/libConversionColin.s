@@ -116,8 +116,8 @@ returnModuloPower:
 # End moduloPower
 
 .text 
-.global arrayIntoFile
-arrayIntoFile:
+.global arrayWriteFile
+arrayWriteFile:
         # input: 
         # r0: an array containing values to be printed
         # output: 
@@ -174,7 +174,6 @@ EndWriteLoop:
    buffer: .space 100
    format: .asciz "%d"
    commaFormat: .asciz ","
-   output: .asciz "The current value is: %c\n"
 @ END
 
 
@@ -203,9 +202,8 @@ copy_loop:
     STR r0, [sp, #4]
     str r1, [sp]
     mov r0, r2 @ move character to 40
-    ldr r1, [sp, #8]gi
-    cd 
-    ldr r2, [sp, #12]
+    ldr r2, [sp, #8]
+    ldr r1, [sp, #12]
     @mov r2, #15 @ move n to r2
     bl moduloPower
 
@@ -240,19 +238,24 @@ encrypt:
     STR lr, [sp,#8]
     STR r0, [sp,#4]
     STR r1, [sp]
+
     mov r2, r0
     mov r3, r1
+
     LDR r0, =prompt_message     @ Load the address of the prompt message into r0
     BL printf 
+
     LDR r0, =format_input    @ Load the format string address into r0
     LDR r1, =user_input      @ Load the address of the reserved memory for user input into r1
     BL scanf                 @ Call scanf to read user input
+
     ldr r0, =user_input
     ldr r1, =destination_array
     ldr r2, [sp,#4]
     ldr r3, [sp]
     bl encryptArray
-    bl arrayIntoFile
+
+    bl arrayWriteFile
 
     LDR lr, [sp, #12]   @Load the value of lr
     ADD sp,sp,#12
@@ -260,7 +263,5 @@ encrypt:
 .data
 user_input:  .space 100    @ Reserve space to store user input
 format_input:  .asciz "%99[^\n]"   @ Format string for scanf (reads a string)
-array:  .space 100   @ Initialize an array with values 1, 2, 3, 4, 5
-source_string: .ascii "Hello\0"
 destination_array: .space 100 @ Allocate space for the destination array
 prompt_message:  .asciz "Enter a string: "   @ Prompt message for user input

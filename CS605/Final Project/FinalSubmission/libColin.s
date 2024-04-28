@@ -1,123 +1,7 @@
-#
-# Library name: libRong.s
-# Author: Rong Fan
-# Date: 04/16/2024
-# Contents:
-
-# 1.1: checkDivisible			go to line 20	Check if a number is a divisor of another
-# 1.2: getRoughSquareRoot		go to line 63	Get a number slightly more than the square root of a number
-# 1.3: checkPrime			go to line 113	Check if a number is prime
-
-# 2.1: modulo				go to line 178	Get x%y
-# 2.2: moduloPower			go to line 217	Get (x^y)%z
- 
-# 3.1: getRandom 			go to line 275  Generate a random integer between 1 and n
-# 3.2: gcd				go to line 314	Find the greatest common devisor of x and y
-					
-# 4.1: cpubexp				go to line 367	Generate public exponent e
-# 4.2: cprivexp				go to line 423	Generate private exponent d
-
-
-
-.global modulo
-
-# Helper for modulo power and others
-.text
-modulo:
-	# input1: an integer a in r0
-	# input2: another integer b in r1
-	# output: return a%b in r0
-
-# store lr on stack
-	SUB sp, #4
-	STR lr, [sp]
-
-# store other variables
-	SUB sp, #8
-	STR r4, [sp]
-	STR r5, [sp, #4] 
-
-# find the quotient 
-	MOV r4, r0
-	MOV r5, r1
-	BL __aeabi_idiv
-
-# find the remainder
-	MUL r0, r5
-	SUB r0, r4, r0
-
-# return the stack
-	LDR r4, [sp]
-	LDR r5, [sp, #4]
-	LDR lr, [sp, #8]
-	ADD sp, #12
-	MOV pc, lr
-
-.data
-
-# End modulo
-
-
-.global moduloPower
-
-.text
-moduloPower:
-	# input: r0: an integer b which the base
-	# r1: an integer n which is the exponent e
-	# r2: an integer m which is the modulo number n
-	# output: return b ^ n % m in r0
-	# we loop b * b, (n-1) times and mod m
-	# to avoid overflow happen for b ^ n when b or n is large
-	# we take the modulo every time b is multiplied
-	# and use the remainder to multiply b again
-	
-	# r4 = b store the base
-	# r5 = n store times the loop need to be run and count down
-	# r6 = m stays the same
-
-# store lr on stack
-	SUB sp, #4
-	STR lr, [sp]
-
-# store the input variables and initialize the loop
-	SUB sp, #12
-	STR r4, [sp]
-	STR r5, [sp, #4]
-	STR r6, [sp, #8]
-	MOV r4, r0
-	MOV r5, r1
-	MOV r6, r2
-
-checkEndPower:
-# end condition: if n = 1 return r0 which stores either the initial base or the last remainder 
-	CMP r5, #1
-	BGT continuePower
-		B returnModuloPower
-
-continuePower:
-# else multiply r0 and b and mod m, and subtract n by 1
-	SUB r5, #1
-	MUL r0, r0, r4
-	MOV r1, r6
-	BL modulo
-	B checkEndPower
-	
-returnModuloPower:
-# clear the stack and return
-	LDR r4, [sp]
-	LDR r5, [sp, #4]
-	LDR r6, [sp, #8]
-	LDR lr, [sp, #12]
-	ADD sp, #16
-	MOV pc, lr
-
-.data
-
-# End moduloPower
 
 .text 
-.global arrayIntoFile
-arrayIntoFile:
+.global arrayWriteFile
+arrayWriteFile:
         # input: 
         # r0: an array containing values to be printed
         # output: 
@@ -254,8 +138,8 @@ encrypt:
     ldr r2, [sp,#4]
     ldr r3, [sp]
     bl encryptArray
-
-    bl arrayIntoFile
+    
+    bl arrayWriteFile
 
     LDR lr, [sp, #12]   @Load the value of lr
     ADD sp,sp,#12
