@@ -255,16 +255,16 @@ case4:
 	BNE case0	
 
 	# ask for private keys
-	@ LDR r0, =askPrivateKeyn
-	@ BL printf
-	@ LDR r0, =formatDecimal
-	@ LDR r1, =number1 @number1 is n
-	@ BL scanf
-	@ LDR r0, =askPrivateKeyd
-	@ BL printf
-	@ LDR r0, =formatDecimal
-	@ LDR r1, =number2 @number2 is d
-	@ BL scanf
+	 LDR r0, =askPrivateKeyn
+	 BL printf
+	 LDR r0, =formatDecimal
+	 LDR r1, =number1 @number1 is n
+	 BL scanf
+	 LDR r0, =askPrivateKeyd
+	 BL printf
+	 LDR r0, =formatDecimal
+	 LDR r1, =number2 @number2 is d
+	 BL scanf
 
 	@ # ask for name of file to decrypt
 	@ LDR r0, =askInputFile
@@ -273,6 +273,11 @@ case4:
 	@ LDR r1, =fileName
 	@ BL scanf
 	
+
+	LDR r0, =number2
+	LDR r0, [r0]
+	LDR r1, =number1
+	LDR r1, [r1]
 	# insert your call to decrypt here. load variables to your corresponding registers
 	BL decrypt
 

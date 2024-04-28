@@ -204,7 +204,7 @@ copy_loop:
     mov r0, r2 @ move character to 40
     ldr r2, [sp, #8]
     ldr r1, [sp, #12]
-    @mov r2, #15 @ move n to r2
+
     bl moduloPower
 
     mov r2, r0 @ move return to r2
@@ -257,11 +257,11 @@ encrypt:
 
     bl arrayWriteFile
 
-    LDR lr, [sp, #12]   @Load the value of lr
+    LDR lr, [sp, #8]   @Load the value of lr
     ADD sp,sp,#12
     MOV pc,lr
 .data
 user_input:  .space 100    @ Reserve space to store user input
-format_input:  .asciz "%99[^\n]"   @ Format string for scanf (reads a string)
+format_input:  .asciz "99[^\n]"   @ Format string for scanf (reads a string)
 destination_array: .space 100 @ Allocate space for the destination array
 prompt_message:  .asciz "Enter a string: "   @ Prompt message for user input
