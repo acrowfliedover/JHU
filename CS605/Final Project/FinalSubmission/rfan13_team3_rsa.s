@@ -4,16 +4,16 @@
 # Date: 04/20/2024
 # Purpose: This is the main program for the final project
 
-# 1.generate random keys											go to line xxx
-# Range: currently generating p and q from 10 to 50, can be changed later
+# 1.generate random keys											go to line 48
+# Range: currently generating p and q from 10 to 100, can be changed later
 
-# 2.generate keys by entering primes								go to line xxx
-# Will check if entered is between 10 and 50 can be changed to used larger numbers
+# 2.generate keys by entering primes								go to line 111
+# Will check if entered is between 10 and 100 can be changed to used larger numbers
 
-# 3.encrypt															go to line xxx
+# 3.encrypt															go to line 219
 # enter n, e, and the message you want to encrypt and output into a file encrypted.txt
 
-# 4.decrypt															go to line xxx
+# 4.decrypt															go to line 252
 # enter n, d, assuming your encrypted file is called encrypted.txt, 
 
 # for case 1 and 2
@@ -22,9 +22,6 @@
 # r6 = n
 # r7 = phi
 # r8 = e
-
-
-
 
 .text
 .global main
@@ -53,9 +50,9 @@ input:
 	BNE case2
 
 	generateRandomPrime1:
-	# generate random number between 10 and 50
-	# by generating a number between 1 and 41 and then add 9
-		MOV r0, #41
+	# generate random number between 10 and 100
+	# by generating a number between 1 and 91 and then add 9
+		MOV r0, #91
 		BL getRandom
 		ADD r4, r0, #9
 	
@@ -67,7 +64,7 @@ input:
 	
 	generateRandomPrime2:
 	# else continue to generate next random prime
-		MOV r0, #41
+		MOV r0, #91
 		BL getRandom
 		ADD r5, r0, #9
 	
@@ -132,7 +129,7 @@ case2:
 		MOV r1, #0
 		CMP r0, #10
 		ADDLT r1, #1
-		CMP r0, #50
+		CMP r0, #100
 		ADDGT r1, #1
 		CMP r1, #0
 		BEQ checkPrime1
@@ -167,7 +164,7 @@ case2:
 		MOV r1, #0
 		CMP r0, #10
 		ADDLT r1, #1
-		CMP r0, #50
+		CMP r0, #100
 		ADDGT r1, #1
 		CMP r1, #0
 		BEQ checkPrime2
@@ -272,17 +269,12 @@ case4:
 	# clear the buffer
 	BL getchar
 	
+	# call decrypt
 	LDR r0, =number2
 	LDR r0, [r0]
 	LDR r1, =number1
 	LDR r1, [r1]
 	BL decrypt
-
-
-	# if you want to output the message here, uncomment the following
-	# make sure you move your output to r1
-	#LDR r0, =outputDecrypt
-	#BL printf
 
 	# return to main menu
 	B input
@@ -302,7 +294,7 @@ endProgram:
 	MOV pc, lr
 
 .data
-	askFunction: .asciz "\nHello user 10001, please give me a number to test for functions.\nEnter [1] to generate keys using random primes.\nEnter [2] to generate keys using inputted primes.\nEnter [3] to encrypt a message and output to a file.\nEnter [4] to decrypt a message from a file. \nEnter [-1] to exit. \n"
+	askFunction: .asciz "\nHello user 10001, enter a number to run the corresponding function.\nEnter [1] to generate keys using random primes.\nEnter [2] to generate keys using inputted primes.\nEnter [3] to encrypt a message and output to encrypted.txt.\nEnter [4] to decrypt a message from encrypted.txt. \nEnter [-1] to exit. \n"
 	promptPrime1: .asciz "Please enter a prime \n"
 	promptPrime2: .asciz "Please enter a different prime \n"
 	askNotPrime: .asciz "You entered a non-prime. Please enter a prime. \n"
@@ -316,9 +308,7 @@ endProgram:
 	askPrivateKeyd: .asciz "Please enter the other part of the private key, the exponent d.\n"
 	
 	formatDecimal: .asciz "%d"
-	formatString: .asciz "%s"
-        #msgFormat: .space 100
-        
+	formatString: .asciz "%s"    
 
 	outputPublicKey: .asciz "Your public keys are: n = %d and e = %d.\n"
 	outputPrivateKey: .asciz "Your private keys are: n = %d and d = %d.\n"
