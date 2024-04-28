@@ -141,11 +141,11 @@ encrypt:
     
     bl arrayWriteFile
 
-    LDR lr, [sp, #12]   @Load the value of lr
+    LDR lr, [sp, #8]   @Load the value of lr
     ADD sp,sp,#12
     MOV pc,lr
 .data
 user_input:  .space 100    @ Reserve space to store user input
-format_input:  .asciz "%99[^\n]"   @ Format string for scanf (reads a string)
+format_input:  .asciz "%s99[^\n]"   @ Format string for scanf (reads a string)
 destination_array: .space 100 @ Allocate space for the destination array
 prompt_message:  .asciz "Enter a string: "   @ Prompt message for user input
