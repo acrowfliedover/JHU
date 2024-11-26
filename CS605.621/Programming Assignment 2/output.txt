@@ -1,0 +1,30 @@
+['0101101111', '00110', '01010']
+Length of s is: 10
+Length of x is: 5
+Length of y is: 5
+number of comparisons is 1
+It is not an interweave
+['1101101110', '10011', '11']
+Length of s is: 10
+Length of x is: 5
+Length of y is: 2
+number of comparisons is 0
+It is an interweave
+['0001001111', '11101', '00100']
+Length of s is: 10
+Length of x is: 5
+Length of y is: 5
+number of comparisons is 1
+It is not an interweave
+['0111011001', '0011', '000']
+Length of s is: 10
+Length of x is: 4
+Length of y is: 3
+number of comparisons is 1
+It is not an interweave
+['0010111001', '1000', '0001']
+Length of s is: 10
+Length of x is: 4
+Length of y is: 4
+number of comparisons is 1
+It is not an interweave
