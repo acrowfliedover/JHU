@@ -1,0 +1,600 @@
+['01111100100111000000', '000', '01']
+Length of s is: 20
+Length of x is: 3
+Length of y is: 2
+number of comparisons is 99
+It is an interweave
+['10011100101011000101', '1', '1']
+Length of s is: 20
+Length of x is: 1
+Length of y is: 1
+number of comparisons is 35
+It is an interweave
+['00000110110111100010', '1', '0100']
+Length of s is: 20
+Length of x is: 1
+Length of y is: 4
+number of comparisons is 136
+It is an interweave
+['00110001011100000100', '0', '100']
+Length of s is: 20
+Length of x is: 1
+Length of y is: 3
+number of comparisons is 99
+It is an interweave
+['10010101100010100110', '0', '0']
+Length of s is: 20
+Length of x is: 1
+Length of y is: 1
+number of comparisons is 17
+It is an interweave
+['11100010001001000101', '100', '0111']
+Length of s is: 20
+Length of x is: 3
+Length of y is: 4
+number of comparisons is 934
+It is not an interweave
+['10010101010001101100', '1', '100']
+Length of s is: 20
+Length of x is: 1
+Length of y is: 3
+number of comparisons is 30
+It is an interweave
+['10100001100000111110', '1', '010']
+Length of s is: 20
+Length of x is: 1
+Length of y is: 3
+number of comparisons is 30
+It is an interweave
+['00010000001001011001', '1', '1']
+Length of s is: 20
+Length of x is: 1
+Length of y is: 1
+number of comparisons is 111
+It is an interweave
+['00100011110010000011', '011', '110']
+Length of s is: 20
+Length of x is: 3
+Length of y is: 3
+number of comparisons is 150
+It is an interweave
+['00100010000000111000', '00', '10']
+Length of s is: 20
+Length of x is: 2
+Length of y is: 2
+number of comparisons is 35
+It is an interweave
+['10111110111111000100', '01', '1']
+Length of s is: 20
+Length of x is: 2
+Length of y is: 1
+number of comparisons is 21
+It is an interweave
+['01001010100110000100', '111', '0']
+Length of s is: 20
+Length of x is: 3
+Length of y is: 1
+number of comparisons is 90
+It is an interweave
+['10111001101100001000', '0111', '0010']
+Length of s is: 20
+Length of x is: 4
+Length of y is: 4
+number of comparisons is 291
+It is an interweave
+['00010000101010100001', '1110', '1']
+Length of s is: 20
+Length of x is: 4
+Length of y is: 1
+number of comparisons is 121
+It is not an interweave
+['01011101010111001110', '011', '10']
+Length of s is: 20
+Length of x is: 3
+Length of y is: 2
+number of comparisons is 51
+It is an interweave
+['01001110010100101010', '111', '00']
+Length of s is: 20
+Length of x is: 3
+Length of y is: 2
+number of comparisons is 67
+It is an interweave
+['01100010100110110110', '10', '1']
+Length of s is: 20
+Length of x is: 2
+Length of y is: 1
+number of comparisons is 27
+It is an interweave
+['00010111001010001101', '1', '1011']
+Length of s is: 20
+Length of x is: 1
+Length of y is: 4
+number of comparisons is 57
+It is an interweave
+['11110011011111110010', '10', '1']
+Length of s is: 20
+Length of x is: 2
+Length of y is: 1
+number of comparisons is 46
+It is an interweave
+['10110010001100001010', '0000', '10']
+Length of s is: 20
+Length of x is: 4
+Length of y is: 2
+number of comparisons is 161
+It is an interweave
+['10100001100001000101', '1', '100']
+Length of s is: 20
+Length of x is: 1
+Length of y is: 3
+number of comparisons is 30
+It is an interweave
+['10101101010111010110', '0000', '00']
+Length of s is: 20
+Length of x is: 4
+Length of y is: 2
+number of comparisons is 124
+It is not an interweave
+['10100010101101110010', '0', '0']
+Length of s is: 20
+Length of x is: 1
+Length of y is: 1
+number of comparisons is 35
+It is an interweave
+['11101010011111000001', '10', '1']
+Length of s is: 20
+Length of x is: 2
+Length of y is: 1
+number of comparisons is 32
+It is an interweave
+['10010010010110100010', '11', '011']
+Length of s is: 20
+Length of x is: 2
+Length of y is: 3
+number of comparisons is 236
+It is an interweave
+['00110000101101101111', '110', '000']
+Length of s is: 20
+Length of x is: 3
+Length of y is: 3
+number of comparisons is 67
+It is an interweave
+['11101101011111100101', '1101', '11']
+Length of s is: 20
+Length of x is: 4
+Length of y is: 2
+number of comparisons is 72
+It is an interweave
+['11110000000111111111', '011', '111']
+Length of s is: 20
+Length of x is: 3
+Length of y is: 3
+number of comparisons is 330
+It is an interweave
+['01001110011011010000', '011', '0']
+Length of s is: 20
+Length of x is: 3
+Length of y is: 1
+number of comparisons is 53
+It is an interweave
+['01001110000010101011', '0100', '0010']
+Length of s is: 20
+Length of x is: 4
+Length of y is: 4
+number of comparisons is 514
+It is not an interweave
+['01101101011110101110', '1101', '00']
+Length of s is: 20
+Length of x is: 4
+Length of y is: 2
+number of comparisons is 95
+It is an interweave
+['10111100001110101010', '0', '01']
+Length of s is: 20
+Length of x is: 1
+Length of y is: 2
+number of comparisons is 101
+It is an interweave
+['10011101100010101011', '1010', '00']
+Length of s is: 20
+Length of x is: 4
+Length of y is: 2
+number of comparisons is 281
+It is an interweave
+['00110100100000000101', '01', '1']
+Length of s is: 20
+Length of x is: 2
+Length of y is: 1
+number of comparisons is 36
+It is an interweave
+['10010110100111010000', '01', '1100']
+Length of s is: 20
+Length of x is: 2
+Length of y is: 4
+number of comparisons is 158
+It is an interweave
+['01100110011100011100', '01', '11']
+Length of s is: 20
+Length of x is: 2
+Length of y is: 2
+number of comparisons is 282
+It is an interweave
+['00110100100001011110', '1', '0']
+Length of s is: 20
+Length of x is: 1
+Length of y is: 1
+number of comparisons is 18
+It is an interweave
+['11111011001101111010', '00', '1']
+Length of s is: 20
+Length of x is: 2
+Length of y is: 1
+number of comparisons is 146
+It is an interweave
+['11001011100110110001', '1', '01']
+Length of s is: 20
+Length of x is: 1
+Length of y is: 2
+number of comparisons is 101
+It is an interweave
+['01011000100110001000', '1', '0']
+Length of s is: 20
+Length of x is: 1
+Length of y is: 1
+number of comparisons is 11
+It is an interweave
+['01000001011101100010', '01', '1']
+Length of s is: 20
+Length of x is: 2
+Length of y is: 1
+number of comparisons is 148
+It is an interweave
+['01000101101111000001', '1101', '00']
+Length of s is: 20
+Length of x is: 4
+Length of y is: 2
+number of comparisons is 120
+It is an interweave
+['01001101111001100111', '1100', '00']
+Length of s is: 20
+Length of x is: 4
+Length of y is: 2
+number of comparisons is 550
+It is an interweave
+['11111101000100011000', '0', '0010']
+Length of s is: 20
+Length of x is: 1
+Length of y is: 4
+number of comparisons is 93
+It is an interweave
+['01011111011011001101', '1000', '0001']
+Length of s is: 20
+Length of x is: 4
+Length of y is: 4
+number of comparisons is 243
+It is not an interweave
+['11010011100000110110', '0', '00']
+Length of s is: 20
+Length of x is: 1
+Length of y is: 2
+number of comparisons is 99
+It is an interweave
+['01111011101101100000', '1', '1110']
+Length of s is: 20
+Length of x is: 1
+Length of y is: 4
+number of comparisons is 48
+It is an interweave
+['00001111000001000111', '1', '0111']
+Length of s is: 20
+Length of x is: 1
+Length of y is: 4
+number of comparisons is 74
+It is an interweave
+['00010111001011001011', '11', '01']
+Length of s is: 20
+Length of x is: 2
+Length of y is: 2
+number of comparisons is 69
+It is an interweave
+['10101011101001110111', '11', '01']
+Length of s is: 20
+Length of x is: 2
+Length of y is: 2
+number of comparisons is 48
+It is an interweave
+['00111010011000000101', '0', '110']
+Length of s is: 20
+Length of x is: 1
+Length of y is: 3
+number of comparisons is 161
+It is an interweave
+['10010000010111000011', '0', '0']
+Length of s is: 20
+Length of x is: 1
+Length of y is: 1
+number of comparisons is 17
+It is an interweave
+['00011001110110001010', '1', '0111']
+Length of s is: 20
+Length of x is: 1
+Length of y is: 4
+number of comparisons is 189
+It is an interweave
+['00111000011001000001', '101', '1']
+Length of s is: 20
+Length of x is: 3
+Length of y is: 1
+number of comparisons is 254
+It is not an interweave
+['00100100010101010111', '1011', '01']
+Length of s is: 20
+Length of x is: 4
+Length of y is: 2
+number of comparisons is 454
+It is an interweave
+['01011011111011011100', '110', '10']
+Length of s is: 20
+Length of x is: 3
+Length of y is: 2
+number of comparisons is 55
+It is an interweave
+['11101110010000110100', '100', '000']
+Length of s is: 20
+Length of x is: 3
+Length of y is: 3
+number of comparisons is 195
+It is an interweave
+['00101110110000101000', '1', '0']
+Length of s is: 20
+Length of x is: 1
+Length of y is: 1
+number of comparisons is 18
+It is an interweave
+['11100010011011101101', '00', '1']
+Length of s is: 20
+Length of x is: 2
+Length of y is: 1
+number of comparisons is 46
+It is an interweave
+['10110110011100011101', '001', '00']
+Length of s is: 20
+Length of x is: 3
+Length of y is: 2
+number of comparisons is 230
+It is not an interweave
+['11111101110001011001', '01', '1']
+Length of s is: 20
+Length of x is: 2
+Length of y is: 1
+number of comparisons is 116
+It is an interweave
+['01111101100000001001', '111', '1011']
+Length of s is: 20
+Length of x is: 3
+Length of y is: 4
+number of comparisons is 128
+It is an interweave
+['00110111101110001010', '1', '1000']
+Length of s is: 20
+Length of x is: 1
+Length of y is: 4
+number of comparisons is 287
+It is an interweave
+['10010010110010010000', '1', '00']
+Length of s is: 20
+Length of x is: 1
+Length of y is: 2
+number of comparisons is 20
+It is an interweave
+['11000100110110110111', '010', '101']
+Length of s is: 20
+Length of x is: 3
+Length of y is: 3
+number of comparisons is 202
+It is an interweave
+['11000001111100111110', '1', '1']
+Length of s is: 20
+Length of x is: 1
+Length of y is: 1
+number of comparisons is 12
+It is an interweave
+['01001010100001111011', '0', '11']
+Length of s is: 20
+Length of x is: 1
+Length of y is: 2
+number of comparisons is 50
+It is an interweave
+['11101101010011000111', '00', '1110']
+Length of s is: 20
+Length of x is: 2
+Length of y is: 4
+number of comparisons is 146
+It is an interweave
+['10101111010000010111', '01', '100']
+Length of s is: 20
+Length of x is: 2
+Length of y is: 3
+number of comparisons is 308
+It is an interweave
+['00111000100101101110', '111', '0']
+Length of s is: 20
+Length of x is: 3
+Length of y is: 1
+number of comparisons is 48
+It is an interweave
+['11100101001100110000', '001', '1']
+Length of s is: 20
+Length of x is: 3
+Length of y is: 1
+number of comparisons is 68
+It is an interweave
+['11010010000000111001', '00', '0010']
+Length of s is: 20
+Length of x is: 2
+Length of y is: 4
+number of comparisons is 92
+It is an interweave
+['11000010011000011011', '1101', '10']
+Length of s is: 20
+Length of x is: 4
+Length of y is: 2
+number of comparisons is 201
+It is not an interweave
+['10011110000110001101', '000', '001']
+Length of s is: 20
+Length of x is: 3
+Length of y is: 3
+number of comparisons is 368
+It is not an interweave
+['10000010111000011101', '0110', '0']
+Length of s is: 20
+Length of x is: 4
+Length of y is: 1
+number of comparisons is 870
+It is not an interweave
+['01010010011101100111', '0', '0']
+Length of s is: 20
+Length of x is: 1
+Length of y is: 1
+number of comparisons is 48
+It is an interweave
+['00100011011111001000', '1000', '0110']
+Length of s is: 20
+Length of x is: 4
+Length of y is: 4
+number of comparisons is 130
+It is an interweave
+['10011000010100001000', '0', '1110']
+Length of s is: 20
+Length of x is: 1
+Length of y is: 4
+number of comparisons is 65
+It is an interweave
+['00110110100100110110', '0', '0']
+Length of s is: 20
+Length of x is: 1
+Length of y is: 1
+number of comparisons is 12
+It is an interweave
+['01100000100011101101', '11', '011']
+Length of s is: 20
+Length of x is: 2
+Length of y is: 3
+number of comparisons is 293
+It is an interweave
+['01011101110100111010', '010', '1000']
+Length of s is: 20
+Length of x is: 3
+Length of y is: 4
+number of comparisons is 560
+It is not an interweave
+['11111001110000111010', '00', '01']
+Length of s is: 20
+Length of x is: 2
+Length of y is: 2
+number of comparisons is 154
+It is an interweave
+['01110100110110110001', '000', '101']
+Length of s is: 20
+Length of x is: 3
+Length of y is: 3
+number of comparisons is 240
+It is an interweave
+['10000001111110011001', '11', '01']
+Length of s is: 20
+Length of x is: 2
+Length of y is: 2
+number of comparisons is 112
+It is an interweave
+['01000101011101000110', '101', '11']
+Length of s is: 20
+Length of x is: 3
+Length of y is: 2
+number of comparisons is 144
+It is an interweave
+['11001110101110010001', '110', '01']
+Length of s is: 20
+Length of x is: 3
+Length of y is: 2
+number of comparisons is 53
+It is an interweave
+['11001000111101100001', '010', '011']
+Length of s is: 20
+Length of x is: 3
+Length of y is: 3
+number of comparisons is 182
+It is an interweave
+['01010101110101011101', '0101', '100']
+Length of s is: 20
+Length of x is: 4
+Length of y is: 3
+number of comparisons is 103
+It is an interweave
+['00111110110110100110', '011', '0']
+Length of s is: 20
+Length of x is: 3
+Length of y is: 1
+number of comparisons is 35
+It is an interweave
+['11101010011100100110', '1', '10']
+Length of s is: 20
+Length of x is: 1
+Length of y is: 2
+number of comparisons is 34
+It is an interweave
+['00100101001000101111', '1', '1010']
+Length of s is: 20
+Length of x is: 1
+Length of y is: 4
+number of comparisons is 236
+It is not an interweave
+['00111110101110011011', '01', '011']
+Length of s is: 20
+Length of x is: 2
+Length of y is: 3
+number of comparisons is 45
+It is an interweave
+['01000011110111010000', '01', '0']
+Length of s is: 20
+Length of x is: 2
+Length of y is: 1
+number of comparisons is 25
+It is an interweave
+['10100101111111101001', '0101', '0']
+Length of s is: 20
+Length of x is: 4
+Length of y is: 1
+number of comparisons is 62
+It is an interweave
+['01110100011100001001', '1', '0001']
+Length of s is: 20
+Length of x is: 1
+Length of y is: 4
+number of comparisons is 550
+It is an interweave
+['01110111100101000110', '0', '0']
+Length of s is: 20
+Length of x is: 1
+Length of y is: 1
+number of comparisons is 73
+It is an interweave
+['10010110100111011110', '0', '11']
+Length of s is: 20
+Length of x is: 1
+Length of y is: 2
+number of comparisons is 31
+It is an interweave
+['10001100101010100010', '001', '11']
+Length of s is: 20
+Length of x is: 3
+Length of y is: 2
+number of comparisons is 157
+It is an interweave
+['01000011001111011100', '100', '0000']
+Length of s is: 20
+Length of x is: 3
+Length of y is: 4
+number of comparisons is 607
+It is not an interweave

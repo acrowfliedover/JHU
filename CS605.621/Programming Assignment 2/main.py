@@ -34,18 +34,16 @@ def generateRandomInputs(n,p,q):
 # generate a random input of s size n, x and y at most n/2
 def generateRandomInputArray(n):
     s=n
-    x=generateRandomxySize(s/2)
-    y=generateRandomxySize(s/2)
+    x=generateRandomxySize(np.sqrt(s)) # used to be s/2
+    y=generateRandomxySize(np.sqrt(s)) # used to be s/2
     return generateRandomInputs(s,x,y)
 
 
 # print output to file
 def printOutputToFile(s):
-    
     fo.write(str(s))
     fo.write("\n")
     
-
 
 
 # the main algorithm of this assignment
@@ -105,22 +103,30 @@ def checkInterweaving(s,x,y):
 
                 # split (and)or(and) statement
                 if dp[i-1][k-i] and s[a+k-1]==x[(i-1)%xlength]: 
+                    numberOfComparisons+=2
                     dp[i].append(True)
                     if i>=xlength and k-i >=ylength:
+                        numberOfComparisons+=2
                         printOutputToFile("number of comparisons is "+ str(numberOfComparisons))
                         printOutputToFile("It is an interweave")
                         return True
+                    numberOfComparisons+=1
                     isAllFalse=False
                 elif dp[i][k-i-1] and s[a+k-1]==y[(k-i-1)%ylength]:
+                    numberOfComparisons+=4
                     dp[i].append(True)
                     if i>=xlength and k-i >=ylength:
+                        numberOfComparisons+=2
                         printOutputToFile("number of comparisons is "+ str(numberOfComparisons))
                         printOutputToFile("It is an interweave")
                         return True
+                    numberOfComparisons+=1
                     isAllFalse=False
                 else:
+                    numberOfComparisons+=4
                     dp[i].append(False)
             if isAllFalse:
+                numberOfComparisons+=1
                 break
     printOutputToFile("number of comparisons is "+ str(numberOfComparisons))
     printOutputToFile("It is not an interweave")
@@ -135,10 +141,11 @@ def testWithRandomInputOfSizeNkTimes(n,k):
 
 
 
-# print(ci.checkInterweaving('100110111','101101','011')) #outputs false
-# print(ci.checkInterweaving('100010111101111','101101','011')) #outputs true
-# print(ci.checkInterweaving('100011111110111111','101101','011')) #outputs false
-# print(ci.checkInterweaving('1001101110111111','101101','011')) #outputs true
 fo = open("output.txt", "w")
-testWithRandomInputOfSizeNkTimes(10,5)
+# print(checkInterweaving('100110111','101101','011')) #outputs false
+# print(checkInterweaving('100010111101111','101101','011')) #outputs true
+# print(checkInterweaving('100011111110111111','101101','011')) #outputs false
+# print(checkInterweaving('1001101110111111','101101','011')) #outputs true
+testWithRandomInputOfSizeNkTimes(2000000,100) 
+# I noticed that as the size of x and y gets larger, it's very unlikely to be an interweave, so instead of a random number between |s|/2, I changed to sqrt(|s|)
 fo.close
